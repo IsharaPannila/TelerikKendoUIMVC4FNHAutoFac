@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section featured {
+    <div class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+                   </div>
+    </div>
+    }
+
+<h3>Telerik UI for ASP.NET MVC PanelBar</h3>
+<br />
+
+
+@Html.Kendo().DropDownList().Name("myList").DataSource(datasource=> datasource
+        .Read(read => read.Action("Index", "Employee"))).DataTextField("Name")

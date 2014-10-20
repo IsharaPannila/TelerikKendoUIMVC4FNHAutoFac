@@ -1,0 +1,23 @@
+﻿@model IEnumerable<TelerikMvcApp2.Models.Entities.Products>
+
+@{
+    ViewBag.Title = "Telerik Kendo UI/MVC 4/Fluent NHibernate / AutoFac/ SQL2012";
+}
+
+<h2>Telerik Grid Test</h2>
+
+@(Html.Kendo().Grid(Model).Name("Products").Columns(c=> {
+    c.Bound(p => p.ProductName);
+    c.Bound(p => p.Category.CategoryName);
+    c.Bound(p => p.Supplier.CompanyName);
+    c.Bound(p => p.UnitPrice);
+    c.Bound(p => p.UnitsInStock);
+    c.Bound(p => p.Discontinued);
+
+})
+.DataSource(d => d.Ajax().ServerOperation(false))
+.Pageable()
+.Filterable()
+.Sortable ()
+.Groupable ()
+)
